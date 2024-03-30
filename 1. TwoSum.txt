@@ -1,0 +1,21 @@
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] result = new int[2];
+        
+        for (int i = 0; i < nums.length; i++) {
+            // For each element, iterate through the rest of the array to find the complement
+            for (int j = i + 1; j < nums.length; j++) {
+                // If the complement is found, return the indices
+                if (nums[i] + nums[j] == target) {
+                    result[0] = i; // Store the index of the first number
+                    result[1] = j; // Store the index of the second number
+                    return result;
+                }
+            }
+        }
+        // If no solution is found, return an empty array
+        return null;
+    }
+}
+
